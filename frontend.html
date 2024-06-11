@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aqualarm: Real-Time Water Quality Monitoring</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #1b2330; /* Dark blue background */
+      color: #fff; /* White text */
+    }
+
+    .container {
+      background-color: #242a38; /* Slightly lighter blue for container */
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+      text-align: center;
+    }
+
+    .header {
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 5px;
+      color: #00bcd4; /* Light blue for title */
+    }
+
+    p {
+      font-size: 1.2em;
+      font-weight: lighter;
+    }
+
+    .data-display {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
+    .parameter {
+      margin: 10px;
+      font-size: 1.1em;
+    }
+
+    .parameter-label {
+      display: block;
+      margin-bottom: 5px;
+      color: #80cbc4; /* Light blue for labels */
+    }
+
+    .parameter-value {
+      font-weight: bold;
+      font-size: 1.3em;
+      color: #00bcd4; /* Light blue for values */
+    }
+
+    .history-button-container {
+      margin-bottom: 10px;
+    }
+
+    #history-button { /* Style the history button */
+      background-color: #00bcd4; /* Light blue */
+      color: #fff; /* White text */
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+
+    #history-button:hover { /* Button hover effect */
+      background-color: #009688; /* Darker blue on hover */
+    }
+
+    .update-message {
+      font-size: 0.9em;
+      margin-top: 10px;
+    }
+
+    #last-updated {
+      font-weight: bold;
+      color: #80cbc4; /* Light blue for timestamp */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Aqualarm</h1>
+      <p>Real-Time Water Quality Monitoring System</p>
+    </div>
+    <div class="data-display">
+      <div class="parameter">
+        <span class="parameter-label">pH:</span>
+        <span id="ph-value" class="parameter-value"></span>
+      </div>
+      <div class="parameter">
+        <span class="parameter-label">Turbidity:</span>
+        <span id="turbidity-value" class="parameter-value"></span>
+      </div>
+      <div class="parameter">
+        <span class="parameter-label">Temperature:</span>
+        <span id="temperature-value" class="parameter-value"></span>
+      </div>
+      <div class="parameter">
+        <span class="parameter-label">Conductivity:</span>
+        <span id="conductivity-value" class="parameter-value"></span>
+      </div>
+    </div>
+    <div class="history-button-container">
+      <a href="#" id="history-button">View Past History</a>
+    
